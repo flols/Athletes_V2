@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { StyleSheet, Text, View,FlatList, Image, TextInput, SafeAreaView, Keyboard, TouchableOpacity } from 'react-native';
+import { InputAccessoryView } from 'react-native-web';
 import Task from './components/AddRunner';
 
 export default function App() {
@@ -30,6 +31,7 @@ export default function App() {
   }
 
 
+
   const oneRunner = ({item}) => (
     <View style={styles.items}>
     <View style={styles.itemsLeft}>
@@ -44,19 +46,30 @@ export default function App() {
   </View> 
   )
 
+  
+
+
   return (
     <View style={styles.Body}>
       <View style={styles.container}>
         <View style={styles.runnersWrapper}>
           <Text style={styles.sectionTitle}>Athletes</Text>
         </View>
+
         <View style={styles.searchBar}>
           <Image source={require('./assets/loupe.png')} style={styles.loupe}/>
-          <TextInput placeholder="Enter an email" style={styles.titleSearchbar} value={task} onChangeText={text => setTask(text)}></TextInput>
+          <TextInput 
+            placeholder="Add an athletes" 
+            style={styles.titleSearchbar} 
+            value={task} 
+            onChangeText={text => 
+            setTask(text)}
+            />
           <TouchableOpacity onPress={() => handleAddTask()}>
           <Image source={require('./assets/accept.png')} style={styles.accept}/>
           </TouchableOpacity>
         </View>
+        
         <View style={styles.MyAthletes}>
           <Text style={styles.sectionTitle}>My Athletes</Text>
         </View>
@@ -189,6 +202,12 @@ athletesImage:{
     marginLeft: 5,
     marginRight: 5,
     borderRadius: '50%',
-}
+},
+
+/* error message */
+errorMsg: {
+  color: '#FF0000',
+  fontSize: 14,
+},
 
 });

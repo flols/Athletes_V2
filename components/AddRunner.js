@@ -16,6 +16,7 @@ const Task = (props) => {
                 </View>
             </View>
         </View>
+        
     )
 }
 
