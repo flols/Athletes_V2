@@ -35,7 +35,7 @@ export default function App() {
   const oneRunner = ({item}) => (
     <View style={styles.items}>
     <View style={styles.itemsLeft}>
-      <View style={styles.square}>
+      <View style={styles.itemsBox}>
         <Image source={item.photo} style={styles.athletesImage}></Image>
       </View>
       <View style={styles.athletesDesc}>
@@ -44,9 +44,7 @@ export default function App() {
       </View>
     </View>
   </View> 
-  
   )
-
 
   return (
     <View style={styles.Body}>
@@ -160,7 +158,7 @@ const styles = StyleSheet.create({
     flexDirection:'row',
     alignItems:'center',
     justifyContent:'space-between',
-    marginBottom: 20
+    marginBottom: 20,
   },
   itemsLeft: {
       flexDirection:'row',
@@ -177,7 +175,7 @@ const styles = StyleSheet.create({
       opacity:0.5,
       fontSize: "13px",
   },
-  square: {
+  itemsBox: {
       width:60,
       height:60,
       opacity:1,
@@ -195,12 +193,6 @@ const styles = StyleSheet.create({
       marginLeft: 5,
       marginRight: 5,
       borderRadius: '50%',
-  },
-
-  /* error message */
-  errorMsg: {
-    color: '#FF0000',
-    fontSize: 14,
   },
 
   /* success message */

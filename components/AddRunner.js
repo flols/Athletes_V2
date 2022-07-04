@@ -5,8 +5,8 @@ const Task = (props) => {
     
     return (
         <View style={styles.items}>
-            <View style={styles.itemLeft}>
-                <View style={styles.square}>
+            <View style={styles.itemsLeft}>
+                <View style={styles.itemsBox}>
                     <Image source={require('../assets/pexels-frank-cone-2291874.jpg')} style={styles.athletesImage}></Image>
                 </View>
                 <View style={styles.athletesDesc}>
@@ -16,7 +16,6 @@ const Task = (props) => {
                 </View>
             </View>
         </View>
-        
     )
 }
 
@@ -30,7 +29,7 @@ const styles = StyleSheet.create({
       justifyContent:'space-between',
       marginBottom: 20
     },
-    itemLeft: {
+    itemsLeft: {
       flexDirection:'row',
       alignItems:'center',
       flexWrap:'wrap'
@@ -45,7 +44,7 @@ const styles = StyleSheet.create({
       opacity:0.5,
       fontSize: "13px",
     },
-    square: {
+    itemsBox: {
       width:60,
       height:60,
       opacity:1,
@@ -56,13 +55,6 @@ const styles = StyleSheet.create({
       flexDirection:'column',
       alignItems:'left',
       flexWrap:'wrap',
-    },
-    circular: {
-      width: 12,
-      height: 12,
-      borderColor: '#55BCF6',
-      borderWidth: 2,
-      borderRadius: 5,
     },
     athletesImage:{
       width: '100%',
