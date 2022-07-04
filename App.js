@@ -28,8 +28,11 @@ export default function App() {
     Keyboard.dismiss();
     setTaskItems([...taskItems, task])
     setTask(null);
+    addsuccess([success])
   }
 
+  /* add message succes */
+  const [success, addsuccess] = useState(false)
 
 
   const oneRunner = ({item}) => (
@@ -44,9 +47,8 @@ export default function App() {
       </View>
     </View>
   </View> 
-  )
-
   
+  )
 
 
   return (
@@ -69,7 +71,7 @@ export default function App() {
           <Image source={require('./assets/accept.png')} style={styles.accept}/>
           </TouchableOpacity>
         </View>
-        
+        <Text style={styles.success}>{success ? "L’athlète à bien été ajouté à votre liste" : ""}</Text>
         <View style={styles.MyAthletes}>
           <Text style={styles.sectionTitle}>My Athletes</Text>
         </View>
@@ -162,52 +164,58 @@ const styles = StyleSheet.create({
     alignItems:'center',
     justifyContent:'space-between',
     marginBottom: 20
-},
-itemsLeft: {
-    flexDirection:'row',
-    alignItems:'center',
-    flexWrap:'wrap'
-},
-itemsTextName: {
-    maxWidth:'100%',
-    fontWeight: 'bold',
+  },
+  itemsLeft: {
+      flexDirection:'row',
+      alignItems:'center',
+      flexWrap:'wrap'
+  },
+  itemsTextName: {
+      maxWidth:'100%',
+      fontWeight: 'bold',
 
-},
-itemsTextEmail: {
-    maxWidth:'100%',
-    opacity:0.5,
-},
-square: {
-    width:50,
-    height:50,
-    opacity:1,
-    borderRadius:5,
-    marginRight:15,
-},
-athletesDesc: {
-    flexDirection:'column',
-    alignItems:'left',
-    flexWrap:'wrap',
-},
-circular: {
-    width:12,
-    height:12,
-    borderColor:'#55BCF6',
-    borderWidth:2,
-    borderRadius:5,
-},
-athletesImage:{
-    width: '100%',
-    height: '100%',
-    marginLeft: 5,
-    marginRight: 5,
-    borderRadius: '50%',
-},
+  },
+  itemsTextEmail: {
+      maxWidth:'100%',
+      opacity:0.5,
+  },
+  square: {
+      width:50,
+      height:50,
+      opacity:1,
+      borderRadius:5,
+      marginRight:15,
+  },
+  athletesDesc: {
+      flexDirection:'column',
+      alignItems:'left',
+      flexWrap:'wrap',
+  },
+  circular: {
+      width:12,
+      height:12,
+      borderColor:'#55BCF6',
+      borderWidth:2,
+      borderRadius:5,
+  },
+  athletesImage:{
+      width: '100%',
+      height: '100%',
+      marginLeft: 5,
+      marginRight: 5,
+      borderRadius: '50%',
+  },
 
-/* error message */
-errorMsg: {
-  color: '#FF0000',
-  fontSize: 14,
-},
+  /* error message */
+  errorMsg: {
+    color: '#FF0000',
+    fontSize: 14,
+  },
+
+  /* success message */
+  success: {
+    color:"green"
+  }, 
 
 });
+
