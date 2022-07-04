@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import { StyleSheet, Text, View,FlatList, Image, TextInput, SafeAreaView, Keyboard, TouchableOpacity } from 'react-native';
-import { InputAccessoryView } from 'react-native-web';
 import Task from './components/AddRunner';
 
 export default function App() {
@@ -20,7 +19,6 @@ export default function App() {
 
   const Separator = () => <View style={styles.separator} />
 
-
   const [task, setTask] = useState();
   const [taskItems, setTaskItems] = useState([]);
 
@@ -33,7 +31,6 @@ export default function App() {
 
   /* add message succes */
   const [success, addsuccess] = useState(false)
-
 
   const oneRunner = ({item}) => (
     <View style={styles.items}>
@@ -173,15 +170,16 @@ const styles = StyleSheet.create({
   itemsTextName: {
       maxWidth:'100%',
       fontWeight: 'bold',
-
+      fontSize: "17px",
   },
   itemsTextEmail: {
       maxWidth:'100%',
       opacity:0.5,
+      fontSize: "13px",
   },
   square: {
-      width:50,
-      height:50,
+      width:60,
+      height:60,
       opacity:1,
       borderRadius:5,
       marginRight:15,
@@ -190,13 +188,6 @@ const styles = StyleSheet.create({
       flexDirection:'column',
       alignItems:'left',
       flexWrap:'wrap',
-  },
-  circular: {
-      width:12,
-      height:12,
-      borderColor:'#55BCF6',
-      borderWidth:2,
-      borderRadius:5,
   },
   athletesImage:{
       width: '100%',
@@ -214,7 +205,8 @@ const styles = StyleSheet.create({
 
   /* success message */
   success: {
-    color:"green"
+    color:"green",
+    fontSize: 17,
   }, 
 
 });

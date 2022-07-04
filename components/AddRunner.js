@@ -38,14 +38,16 @@ const styles = StyleSheet.create({
     itemsTextName: {
       maxWidth:'100%',
       fontWeight: 'bold',
+      fontSize: "17px",
     },
     itemsTextEmail: {
-    maxWidth:'100%',
-    opacity:0.5,
+      maxWidth:'100%',
+      opacity:0.5,
+      fontSize: "13px",
     },
     square: {
-      width:50,
-      height:50,
+      width:60,
+      height:60,
       opacity:1,
       borderRadius:5,
       marginRight:15,
