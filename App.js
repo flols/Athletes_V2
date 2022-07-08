@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { StyleSheet, Text, View,FlatList, Image, TextInput, SafeAreaView, Keyboard, TouchableOpacity } from 'react-native';
-import Task from './components/AddRunner';
+import AddRunner from './components/AddRunner';
 
 export default function App() {
 
@@ -19,18 +19,22 @@ export default function App() {
 
   const Separator = () => <View style={styles.separator} />
 
-  const [task, setTask] = useState();
-  const [taskItems, setTaskItems] = useState([]);
+  const [add, setAdd] = useState('');
+  const [addItems, setAddItems] = useState([]);
 
   const handleAddTask = () => {
+    if (!add.trim()) {
+      alert('Please add an athlete');
+      return;
+    }
     Keyboard.dismiss();
-    setTaskItems([...taskItems, task])
-    setTask(null);
-    addsuccess([success])
+    setAddItems([...addItems, add])
+    setAdd(null);
+    addSuccess([success])
   }
 
   /* add message succes */
-  const [success, addsuccess] = useState(false)
+  const [success, addSuccess] = useState(false)
 
   const oneRunner = ({item}) => (
     <View style={styles.items}>
@@ -56,11 +60,11 @@ export default function App() {
         <View style={styles.searchBar}>
           <Image source={require('./assets/loupe.png')} style={styles.loupe}/>
           <TextInput 
-            placeholder="Add an athletes" 
+            placeholder="Add an athlete" 
             style={styles.titleSearchbar} 
-            value={task} 
+            value={add} 
             onChangeText={text => 
-            setTask(text)}
+            setAdd(text)}
             />
           <TouchableOpacity onPress={() => handleAddTask()}>
           <Image source={require('./assets/accept.png')} style={styles.accept}/>
@@ -81,8 +85,8 @@ export default function App() {
         </SafeAreaView>
       </View>
       {
-        taskItems.map((itemss, index) => {
-          return <Task key={index} text={itemss} />
+        addItems.map((itemss, index) => {
+          return <AddRunner key={index} text={itemss} />
         })
       }
     </View>
@@ -123,7 +127,8 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   titleSearchbar: {
-    width: '100%', height: 25
+    width: '100%',
+    height: 25,
   },
   accept: {
     width: 25,
@@ -198,8 +203,7 @@ const styles = StyleSheet.create({
   /* success message */
   success: {
     color:"green",
-    fontSize: 17,
+    fontSize: '17px',
   }, 
-
 });
 

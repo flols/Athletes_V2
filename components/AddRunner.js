@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 
-const Task = (props) => {
+const AddRunner = (props) => {
     
     return (
         <View style={styles.items}>
@@ -65,5 +65,5 @@ const styles = StyleSheet.create({
   },
 });
   
-export default Task;
+export default AddRunner;
   
